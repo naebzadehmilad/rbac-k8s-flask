@@ -32,54 +32,153 @@ curl -X POST http://127.0.0.1:5000/update \
            "role_rules": [
              {
                "api_groups": [""],
-               "resources": ["pods", "pods/exec", "services", "deployments", "configmaps", "namespaces", "pods/log", "endpoints", "events" ,"nodes"],
-               "verbs": ["get", "list", "watch", "create", "update", "patch", "delete", "deletecollection", "exec"]
+               "resources": [
+                 "pods",
+                 "pods/exec",
+                 "services",
+                 "deployments",
+                 "configmaps",
+                 "namespaces",
+                 "pods/log",
+                 "endpoints",
+                 "events",
+                 "nodes"
+               ],
+               "verbs": [
+                 "get",
+                 "list",
+                 "watch",
+                 "create",
+                 "update",
+                 "patch",
+                 "delete",
+                 "deletecollection",
+                 "exec"
+               ]
              },
              {
                "api_groups": ["apps"],
-               "resources": ["statefulsets", "replicasets", "daemonsets","deployments", "ingressroute" , "ingress"],
-               "verbs": ["get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"]
+               "resources": [
+                 "statefulsets",
+                 "replicasets",
+                 "daemonsets",
+                 "deployments",
+                 "ingressroute",
+                 "ingresses"
+               ],
+               "verbs": [
+                 "get",
+                 "list",
+                 "watch",
+                 "create",
+                 "update",
+                 "patch",
+                 "delete",
+                 "deletecollection"
+               ]
              },
              {
                "api_groups": ["batch"],
                "resources": ["cronjobs"],
-               "verbs": ["get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"]
+               "verbs": [
+                 "get",
+          __     "list",
+                 "watch",
+                 "create",
+                 "update",
+                 "patch",
+                 "delete",
+                 "deletecollection"
+               ]
              },
              {
                "api_groups": ["storage.k8s.io"],
                "resources": ["storageclasses"],
-               "verbs": ["get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"]
+               "verbs": [
+                 "get",
+                 "list",
+                 "watch",
+                 "create",
+                 "update",
+                 "patch",
+                 "delete",
+                 "deletecollection"
+               ]
              },
              {
                "api_groups": ["networking.k8s.io"],
-               "resources": ["ingresses", "ingressclasses", "networkpolicies"],
-               "verbs": ["get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"]
+               "resources": [
+                 "ingresses",
+                 "ingressclasses",
+                 "networkpolicies"
+               ],
+               "verbs": [
+                 "get",
+                 "list",
+                 "watch",
+                 "create",
+                 "update",
+                 "patch",
+                 "delete",
+                 "deletecollection"
+               ]
              },
              {
                "api_groups": ["traefik.containo.us"],
                "resources": ["ingressroutes"],
-               "verbs": ["get", "list", "watch", "create", "update", "patch", "delete", "deletecollection"]
+               "verbs": [
+                 "get",
+                 "list",
+                 "watch",
+                 "create",
+                 "update",
+                 "patch",
+                 "delete",
+                 "deletecollection"
+               ]
              }
            ],
            "user_name": "milad1"
          }'
-چ
+
 
 Or minimal 
 
-  curl -X POST http://127.0.0.1:5000/update \
+curl -X POST http://127.0.0.1:5000/update \
      -H "Content-Type: application/json" \
      -d '{
            "namespaces": ["t1", "t2-dev"],
            "role_rules": [
              {
                "api_groups": [""],
-               "resources": ["pods", "pods/exec", "services", "deployments", "configmaps", "namespaces", "pods/log", "endpoints", "events", "nodes"],
-               "verbs": ["get", "list", "watch", "create", "update", "patch", "delete", "deletecollection", "exec"]
+               "resources": [
+                 "pods",
+                 "pods/exec",
+                 "services",
+                 "deployments",
+                 "configmaps",
+                 "namespaces",
+                 "pods/log",
+                 "endpoints",
+                 "events",
+                 "nodes"
+               ],
+               "verbs": [
+                 "get",
+                 "list",
+                 "watch",
+                 "create",
+                 "update",
+                 "patch",
+                 "delete",
+                 "deletecollection",
+                 "exec"
+               ]
              }
            ],
            "user_name": "milad1"
          }'
+
 
 
 Response
@@ -97,9 +196,10 @@ Content-Type: application/json
 curl -X POST http://127.0.0.1:5000/delete \
      -H "Content-Type: application/json" \
      -d '{
-           "namespaces": [ "t1","t2-dev"],
+           "namespaces": ["t1", "t2-dev"],
            "user_name": "milad1"
          }'
+
 
 Response
 Success: Returns a message  that resources were deleted successfully.
